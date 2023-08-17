@@ -284,13 +284,13 @@ eval("\n\nvar Type = __webpack_require__(/*! ../type */ \"./node_modules/js-yaml
 
 /***/ }),
 
-/***/ "./src/js/main.js":
-/*!************************!*\
-  !*** ./src/js/main.js ***!
-  \************************/
+/***/ "./src/main.js":
+/*!*********************!*\
+  !*** ./src/main.js ***!
+  \*********************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const yaml = __webpack_require__(/*! js-yaml */ \"./node_modules/js-yaml/index.js\")\r\ndocument.addEventListener(\"DOMContentLoaded\", () => {\r\n  const txtYaml = document.getElementById(\"txt-yaml\")\r\n  const txtJson = document.getElementById(\"txt-json\")\r\n  const customEvent = new Event(\"input\", { bubbles: true, cancelable: false })\r\n  txtYaml.addEventListener(\r\n    \"input\",\r\n    function () {\r\n      try {\r\n        const obj = yaml.load(txtYaml.value)\r\n        txtJson.value = JSON.stringify(obj, null, 2)\r\n      } catch (e) {\r\n        txtJson.value = e.message\r\n      }\r\n      txtJson.dispatchEvent(customEvent)\r\n    },\r\n    false\r\n  )\r\n})\r\n\n\n//# sourceURL=webpack://tools1000.com/./src/js/main.js?");
+eval("const yaml = __webpack_require__(/*! js-yaml */ \"./node_modules/js-yaml/index.js\")\r\ndocument.addEventListener(\"DOMContentLoaded\", () => {\r\n  const txtYaml = document.getElementById(\"txt-yaml\")\r\n  const txtJson = document.getElementById(\"txt-json\")\r\n  const customEvent = new Event(\"input\", { bubbles: true, cancelable: false })\r\n  txtYaml.addEventListener(\"input\", () => {\r\n    if (txtYaml.value.trim()) {\r\n      try {\r\n        const obj = yaml.load(txtYaml.value)\r\n        txtJson.value = JSON.stringify(obj, null, 2)\r\n      } catch (e) {\r\n        txtJson.value = e.message\r\n      }\r\n    } else {\r\n      txtJson.value = \"\"\r\n    }\r\n    txtJson.dispatchEvent(customEvent)\r\n  })\r\n})\r\n\n\n//# sourceURL=webpack://tools1000.com/./src/main.js?");
 
 /***/ })
 
@@ -325,7 +325,7 @@ eval("const yaml = __webpack_require__(/*! js-yaml */ \"./node_modules/js-yaml/i
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/main.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/main.js");
 /******/ 	
 /******/ })()
 ;
