@@ -1,12 +1,16 @@
-#txt-yaml,
-#txt-json,
+#txt-input,
+#txt-output,
 div.prism-live {
   height: 60vh;
 }
 
-#txt-yaml,
-#txt-json {
+#txt-input,
+#txt-output {
   border: 1px solid #cccccc;
+}
+
+.btn-group button {
+  border-radius: 0 !important;
 }
 
 pre.prism-live {

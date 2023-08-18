@@ -18,20 +18,38 @@
       </h1>
       <div class="row">
         <div class="col-md-6 col-sm-12">
-          <label for="txt-json" class="form-label">JSON</label
-          ><textarea
-            class="prism-live line-numbers fill prism-live-source language-json"
-            id="txt-json"
-            spellcheck="false"
-          ></textarea>
-        </div>
-        <div class="col-md-6 col-sm-12">
-          <label for="txt-yaml" class="form-label">YAML</label
+          <label for="txt-input" class="form-label">JSON</label
           ><textarea
             class="prism-live line-numbers fill prism-live-source language-yaml"
-            id="txt-yaml"
+            id="txt-input"
             spellcheck="false"
           ></textarea>
+          <div class="btn-group" role="group">
+            <input type="file" id="input-file" style="display: none" />
+            <button type="button" class="btn btn-primary" id="input-import-from-file">
+              Import from file
+            </button>
+            <button type="button" class="btn btn-primary" id="input-copy-to-clipboard">
+              Copy to clipboard
+            </button>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <label for="txt-output" class="form-label">YAML</label
+          ><textarea
+            class="prism-live line-numbers fill prism-live-source language-json"
+            id="txt-output"
+            spellcheck="false"
+          ></textarea>
+          <div class="btn-group" role="group">
+            <input type="file" id="output-file" style="display: none" />
+            <button type="button" class="btn btn-primary" id="output-import-from-file">
+              Import from file
+            </button>
+            <button type="button" class="btn btn-primary" id="output-copy-to-clipboard">
+              Copy to clipboard
+            </button>
+          </div>
         </div>
       </div>
       <p></p>
@@ -51,6 +69,12 @@
           </ul>
         </div>
       </div>
+      <!-- Modal -->
+      <div class="modal fade" id="modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="alert alert-success text-center" role="alert">Copy Successfully</div>
+        </div>
+      </div>
     </div>
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script src="/js/bliss.shy.min.js"></script>
@@ -58,9 +82,16 @@
     <script src="/js/prism-line-numbers.js"></script>
     <script src="/js/prism-live.js"></script>
     <script src="./js/main.js"></script>
-    <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSYXKV0G77"></script>
     <script>
-      LA.init({ id: "KA7jog5XOdRhOz9L", ck: "KA7jog5XOdRhOz9L" })
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag("js", new Date())
+
+      gtag("config", "G-RSYXKV0G77")
     </script>
   </body>
 </html>
